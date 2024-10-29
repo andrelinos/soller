@@ -15,6 +15,11 @@ export function MenuMobile() {
 
   const toggleMenu = () => setIsOpen(!isOpen)
 
+  function handleNavigateToSection(sectionId: string) {
+    const baseUrl = window.location.origin
+    window.location.replace(`${baseUrl}/${sectionId}`)
+  }
+
   return (
     <div className="relative min-h-screen overflow-hidden bg-background">
       <Button
@@ -44,28 +49,26 @@ export function MenuMobile() {
               <span className="text-2xl font-bold">soller</span>
             </header>
 
-            <nav className="flex size-full flex-col items-center pt-10 gap-4">
+            <nav className="flex size-full flex-col items-center pt-10 gap-2">
               <Link
                 key={String()}
-                href="#home"
                 variant="ghost"
                 className="w-full p-4 text-xl text-center text-brand-purple-500 hover:bg-brand-purple-200"
-                onClick={toggleMenu}
+                onClick={() => handleNavigateToSection('#home')}
               >
                 Home
               </Link>
               {menuData?.map((item, i) => (
                 <Link
-                  key={String()}
-                  href={item.url}
+                  key={String(i)}
                   variant="ghost"
                   className="w-full p-4 text-xl text-center text-brand-purple-500 hover:bg-brand-purple-200"
-                  onClick={toggleMenu}
+                  onClick={() => handleNavigateToSection(item.url)}
                 >
                   {item.title}
                 </Link>
               ))}
-              <div className="flex-col gap-6 font-medium xl:flex xl:flex-row xl:justify-end">
+              <div className="flex-col gap-4 pt-2 font-medium xl:flex xl:flex-row xl:justify-end">
                 <Link
                   variant="ghost"
                   href="#"
@@ -77,6 +80,7 @@ export function MenuMobile() {
                     width={20}
                     height={19}
                     alt="Contact phone"
+                    className="w-5 h-auto"
                     priority
                   />
                   555 818 282
@@ -90,6 +94,35 @@ export function MenuMobile() {
                   <ArrowRight width={24} height={24} strokeWidth={2} />
                 </Link>
               </div>
+              <ul className="flex border-t w-full justify-center pt-2 mt-4 gap-6">
+                <li>
+                  <Link
+                    className="m-0 p-0 text-base text-brand-text-primary"
+                    variant="link"
+                    onClick={() => handleNavigateToSection('/terms')}
+                  >
+                    Terms
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="m-0 p-0 text-base text-brand-text-primary"
+                    variant="link"
+                    onClick={() => handleNavigateToSection('/privacy')}
+                  >
+                    Privacy
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="m-0 p-0 text-base text-brand-text-primary"
+                    variant="link"
+                    onClick={() => handleNavigateToSection('/support')}
+                  >
+                    Support
+                  </Link>
+                </li>
+              </ul>
             </nav>
           </section>
         </div>

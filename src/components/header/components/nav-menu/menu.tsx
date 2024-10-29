@@ -10,7 +10,7 @@ export function MenuNav() {
       <div className="flex w-full flex-col items-center justify-center gap-4 pt-20 xl:flex-row xl:justify-start xl:pt-0">
         {menuData?.map((item, i) => (
           <Link
-            key={String()}
+            key={String(i)}
             href={item.url}
             variant="ghost"
             className="w-full rounded-full text-xl xl:w-fit xl:text-base"
@@ -32,6 +32,7 @@ export function MenuNav() {
             width={20}
             height={19}
             alt="Contact phone"
+            className="w-5 h-auto"
             priority
           />
           555 818 282
