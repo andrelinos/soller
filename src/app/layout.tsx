@@ -3,7 +3,8 @@ import '@/styles/globals.css'
 import type { Metadata } from 'next'
 import { Roboto as FontSans } from 'next/font/google'
 
-import { ContainerScroll } from '@/components/container-scroll'
+import { Footer } from '@/components/footer'
+import { Header } from '@/components/header'
 import { cn } from '@/lib/utils'
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -32,7 +33,17 @@ export default async function RootLayout({
           fontSans.variable,
         )}
       >
-        <ContainerScroll>{children}</ContainerScroll>
+        <div
+          className="relative min-h-screen overflow-y-auto overflow-x-hidden bg-background
+     text-brand-text-primary"
+        >
+          <Header />
+
+          {children}
+
+          <Footer />
+        </div>
+        {/* <ContainerScroll>{children}</ContainerScroll> */}
       </body>
     </html>
   )

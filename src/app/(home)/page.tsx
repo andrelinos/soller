@@ -1,6 +1,5 @@
 'use client'
 
-import { BackToTopButton } from '@/components/back-to-top-button'
 import { ActionSection } from '@/components/sections/action'
 import { SectionEcoSolutions } from '@/components/sections/eco-solutions'
 import { SectionFeatures } from '@/components/sections/features'
@@ -17,7 +16,7 @@ export default function Home() {
       <SectionFeatures id="configure" />
       <SliderReviewSection id="reviews" />
       <ActionSection />
-      <BackToTopButton />
+      {/* <BackToTopButton /> */}
     </main>
   )
 }

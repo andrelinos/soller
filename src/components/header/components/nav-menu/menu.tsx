@@ -2,44 +2,22 @@ import { ArrowRight } from 'iconoir-react'
 import Image from 'next/image'
 
 import { Link } from '@/components/link'
+import { menuData } from '../../assets/menu-data'
 
 export function MenuNav() {
   return (
     <nav className="relative z-30 flex w-full flex-1 flex-col items-center justify-between gap-9 px-4 py-6 font-medium xl:flex xl:flex-row xl:px-0">
       <div className="flex w-full flex-col items-center justify-center gap-4 pt-20 xl:flex-row xl:justify-start xl:pt-0">
-        <Link
-          variant="ghost"
-          href="#products"
-          size="social"
-          className="w-full rounded-full text-xl xl:w-fit xl:text-base"
-        >
-          Products
-        </Link>
-
-        <Link
-          variant="ghost"
-          href="#services"
-          size="social"
-          className="w-full rounded-full text-xl xl:w-fit xl:text-base"
-        >
-          Services
-        </Link>
-        <Link
-          variant="ghost"
-          href="#configure"
-          size="social"
-          className="w-full rounded-full text-xl xl:w-fit xl:text-base"
-        >
-          Configure
-        </Link>
-        <Link
-          variant="ghost"
-          href="#reviews"
-          size="social"
-          className="w-full rounded-full text-xl xl:w-fit xl:text-base"
-        >
-          Reviews
-        </Link>
+        {menuData?.map((item, i) => (
+          <Link
+            key={String()}
+            href={item.url}
+            variant="ghost"
+            className="w-full rounded-full text-xl xl:w-fit xl:text-base"
+          >
+            {item.title}
+          </Link>
+        ))}
       </div>
 
       <div className="flex-col gap-6 font-medium xl:flex xl:flex-row xl:justify-end">
