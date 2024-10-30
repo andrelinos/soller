@@ -2,6 +2,7 @@ import { ArrowRight } from 'iconoir-react'
 import Image from 'next/image'
 
 import { Link } from '@/components/link'
+
 import { menuData } from '../../assets/menu-data'
 
 export function MenuNav() {
@@ -22,24 +23,23 @@ export function MenuNav() {
 
       <div className="flex-col gap-6 font-medium xl:flex xl:flex-row xl:justify-end">
         <Link
-          variant="ghost"
-          href="#"
+          variant="unstyled"
+          href="tel:555818282"
           size="social"
-          className="flex h-16 items-center gap-4 rounded-full border px-6 text-brand-blue-500"
+          className="flex h-16 items-center gap-4 rounded-full border px-6 text-brand-blue-500 lg:border-0"
         >
           <Image
             src="/assets/images/icons/phone.svg"
             width={20}
             height={19}
             alt="Contact phone"
-            className="w-5 h-auto"
+            className="h-auto w-5"
             priority
           />
           555 818 282
         </Link>
         <Link
           variant="outline"
-          href="tel:555818282"
           className="group mt-6 flex h-16 w-[306px] items-center justify-center gap-6 rounded-full border border-brand-purple-500 bg-transparent px-6 text-2xl font-bold text-brand-purple-500 hover:bg-brand-purple-500 hover:text-brand-yellow-400 xl:mt-0"
         >
           Request a Quote

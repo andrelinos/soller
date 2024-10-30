@@ -48,8 +48,6 @@ export function SectionHero({ id }: Props) {
       scrollTrigger: {
         trigger: imageRef.current,
         start: 'top 0%',
-        end: 'bottom top',
-        toggleActions: 'play none none reset',
       },
     })
 
@@ -73,7 +71,7 @@ export function SectionHero({ id }: Props) {
             src="/assets/images/image-men-worker-desktop.png"
             width={673}
             height={694}
-            className="hidden h-auto w-96 sm:w-[32rem] md:w-[48rem] lg:flex lg:w-[42rem] xl:w-[44rem] 2xl:w-[53rem] 3xl:w-[53.2rem]"
+            className="hidden h-auto w-96 sm:w-[32rem] md:w-[48rem] lg:flex lg:w-[42rem] xl:w-[44rem] 2xl:w-[53rem] 3xl:w-[50.2rem]"
             alt=""
           />
           <Image
