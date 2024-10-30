@@ -9,7 +9,7 @@ export function BackToTopButton() {
 
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.scrollY > window.innerHeight) {
+      if (window.scrollY > 600) {
         setShowButton(true)
       } else {
         setShowButton(false)

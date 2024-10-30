@@ -2,6 +2,7 @@
 
 import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
 import { useRef } from 'react'
@@ -17,6 +18,8 @@ export function SectionHero({ id }: Props) {
   const titleRef = useRef(null)
   const pRef = useRef(null)
   const imageRef = useRef(null)
+
+  gsap.registerPlugin(ScrollTrigger)
 
   useGSAP(() => {
     gsap.from(titleRef.current, {
@@ -75,7 +78,6 @@ export function SectionHero({ id }: Props) {
             alt=""
           />
           <Image
-            // ref={imageRef}
             src="/assets/images/image-men-worker-mobile.png"
             width={768}
             height={860}

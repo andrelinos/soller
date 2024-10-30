@@ -8,10 +8,10 @@ export function Footer() {
       <div className="flex min-h-24 w-full flex-col items-center justify-between py-6 md:flex-row">
         <div className="flex flex-col items-center gap-6 md:flex-row">
           <Image
-            width={127}
+            width={128}
             height={32}
             src="/assets/images/soller-logo.svg"
-            className="h-auto w-[127px]"
+            style={{ width: '128px', height: '32px' }}
             alt=""
             priority
           />

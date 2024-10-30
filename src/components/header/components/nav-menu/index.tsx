@@ -104,9 +104,8 @@ export function MenuMobile() {
                   <Image
                     src="/assets/images/icons/phone.svg"
                     width={20}
-                    height={19}
+                    height={20}
                     alt="Contact phone"
-                    className="h-auto w-5"
                     priority
                   />
                   555 818 282

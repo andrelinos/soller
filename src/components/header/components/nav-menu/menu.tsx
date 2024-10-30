@@ -25,15 +25,15 @@ export function MenuNav() {
         <Link
           variant="unstyled"
           href="tel:555818282"
+          externalLink
           size="social"
           className="flex h-16 items-center gap-4 rounded-full border px-6 text-brand-blue-500 lg:border-0"
         >
           <Image
             src="/assets/images/icons/phone.svg"
             width={20}
-            height={19}
+            height={20}
             alt="Contact phone"
-            className="h-auto w-5"
             priority
           />
           555 818 282
