@@ -3,7 +3,10 @@
 
   &#xa0;
 
-  <!-- <a href="https://sollertest2024nextjs.netlify.app">Demo</a> -->
+  <a href="https://soller-andrelinos.vercel.app/">Soller Project Online</a>
+
+&#xa0;
+
 </div>
 
 <h1 align="center">Soller Test 2024 Next.js</h1>
@@ -35,11 +38,21 @@
 
 ## :dart: About ##
 
-Describe your project
+The Soller project is a web application aimed at promoting the use of sustainable energy. This application provides information on how solar energy can be an efficient and economical solution for homes and businesses.
 
 ## :sparkles: Features ##
 
-:heavy_check_mark: Navigate;
+:heavy_check_mark: Navigate;\
+:heavy_check_mark: Single page and pages specifics;\
+:heavy_check_mark: Page support and form contact;\
+:heavy_check_mark: Page request a quote and form;\
+:heavy_check_mark: Button back to top;/
+:heavy_check_mark: Menu mobile;\
+:heavy_check_mark: Menu web;\
+:heavy_check_mark: Scroll smooth;\
+:heavy_check_mark: Responsive layout [375, 640, 768, 1024, 1280, 1536, 1920]px;\
+:heavy_check_mark: Scroll smooth;\
+:heavy_check_mark: Effects with gsap;\
 
 ## :rocket: Technologies ##
 
@@ -79,6 +92,10 @@ $ npm run dev
 
 # The server will initialize in the <http://localhost:3000>
 ```
+
+## Project Structure ##
+
+<img src="./.github/structure.png" alt="Soller structure" />
 
 ## :memo: License ##
 
