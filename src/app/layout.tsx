@@ -15,7 +15,25 @@ const fontSans = FontSans({
 
 export const metadata: Metadata = {
   title: 'soller',
-  description: 'The soller service',
+  description:
+    'The Soller project is a web application aimed at promoting the use of sustainable energy. This application provides information on how solar energy can be an efficient and economical solution for homes and businesses.',
+  keywords:
+    'solar energy, sustainable energy, solar panels, energy solutions, renewable energy',
+  openGraph: {
+    title: 'Soller - Sustainable Solar Energy Solutions',
+    description:
+      'Discover sustainable solar energy solutions for your home with Soller.',
+    url: 'https://soller-andrelinos.vercel.app',
+    type: 'website',
+    images: [
+      {
+        url: 'https://soller-andrelinos.vercel.app/assets/images/og-image.png',
+        width: 800,
+        height: 600,
+        alt: 'Soller Solar Energy',
+      },
+    ],
+  },
 }
 
 export default async function RootLayout({
