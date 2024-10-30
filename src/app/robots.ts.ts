@@ -6,10 +6,20 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: '/private/',
+        disallow: ['/private/', '/admin/', '/api/'],
       },
       {
         userAgent: 'Googlebot',
+        allow: '/',
+        disallow: ['/private/', '/admin/'],
+      },
+      {
+        userAgent: 'Bingbot',
+        allow: '/',
+        disallow: ['/private/', '/admin/'],
+      },
+      {
+        userAgent: 'Applebot',
         allow: '/',
         disallow: ['/private/', '/admin/'],
       },
