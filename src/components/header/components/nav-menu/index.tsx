@@ -1,7 +1,7 @@
 'use client'
 
 import { ArrowRight, Menu } from 'iconoir-react'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import { Link } from '@/components/link'
 import { Button } from '@/components/ui/button'
@@ -10,15 +10,56 @@ import { X } from 'lucide-react'
 import Image from 'next/image'
 import { menuData } from '../../assets/menu-data'
 
+import { gsap } from 'gsap'
+
 export function MenuMobile() {
+  const containerRef = useRef<HTMLDivElement>(
+    null
+  ) as React.MutableRefObject<HTMLDivElement | null>
   const [isOpen, setIsOpen] = useState(false)
 
-  const toggleMenu = () => setIsOpen(!isOpen)
+  const tl = useRef(null)
 
   function handleNavigateToSection(sectionId: string) {
     const baseUrl = window.location.origin
     window.location.replace(`${baseUrl}/${sectionId}`)
   }
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen)
+  }
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+  useEffect(() => {
+    if (isOpen) {
+      gsap.fromTo(
+        containerRef.current,
+        { x: '-100%', opacity: 0 },
+        { x: '0%', opacity: 1, duration: 0.5, ease: 'power2.out' }
+      )
+    } else {
+      gsap.to(containerRef.current, {
+        x: '-100%',
+        opacity: 0,
+        duration: 0.3,
+        ease: 'power2.in'
+      })
+    }
+  }, [isOpen])
+  // useEffect(() => {
+  //   if (isOpen) {
+  //     gsap.to(containerRef.current, {
+  //       x: 0,
+  //       duration: 0.5,
+  //       ease: 'power4.inOut'
+  //     })
+  //   } else {
+  //     gsap.to(containerRef.current, {
+  //       x: '-100%',
+  //       duration: 0.5,
+  //       ease: 'power4.inOut'
+  //     })
+  //   }
+  // }, [isOpen])
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-background">
@@ -31,7 +72,9 @@ export function MenuMobile() {
         <span className="sr-only">Menu</span>
       </Button>
       <div
+        id="content-menu-mobile"
         className={`fixed inset-0 z-40 transition-transform transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} bg-white shadow-lg`}
+        ref={containerRef}
       >
         <div className="size-full overflow-hidden relative">
           <span className="absolute -right-28 -top-28 z-0 size-60 rounded-full bg-brand-blue-400" />

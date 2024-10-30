@@ -1,5 +1,10 @@
+'use client'
+
+import { useGSAP } from '@gsap/react'
+import { gsap } from 'gsap'
 import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
+import { useRef } from 'react'
 
 import { Link } from '@/components/link'
 
@@ -8,14 +13,63 @@ interface Props {
 }
 
 export function SectionHero({ id }: Props) {
+  const sectionRef = useRef(null)
+  const titleRef = useRef(null)
+  const pRef = useRef(null)
+  const imageRef = useRef(null)
+
+  useGSAP(() => {
+    gsap.from(titleRef.current, {
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      ease: 'power4.out',
+    })
+
+    gsap.from(pRef.current, {
+      x: -100,
+      opacity: 0,
+      duration: 1,
+      delay: 0.6,
+      ease: 'power4.out',
+      scrollTrigger: {
+        trigger: pRef.current,
+        start: 'top 80%',
+        end: 'bottom top',
+        toggleActions: 'play none none reset',
+      },
+    })
+
+    gsap.from(imageRef.current, {
+      y: -100,
+      opacity: 0,
+      duration: 1,
+      ease: 'power4.out',
+      scrollTrigger: {
+        trigger: imageRef.current,
+        start: 'top 0%',
+        end: 'bottom top',
+        toggleActions: 'play none none reset',
+      },
+    })
+
+    return () => {
+      gsap.killTweensOf(titleRef.current)
+      gsap.killTweensOf(pRef.current)
+      gsap.killTweensOf(imageRef.current)
+    }
+  }, [])
+
   return (
     <section
       id={id || 'hero'}
       className="relative flex min-h-[812px] w-full flex-col px-4 lg:px-20 xl:pt-[139px]"
+      ref={sectionRef}
     >
       <div className="size-full h-[358px] overflow-hidden sm:h-[556px] md:h-[664px] lg:h-[502px] xl:h-0">
         <div className="absolute -right-1 top-0">
           <Image
+            ref={imageRef}
             src="/assets/images/image-men-worker-desktop.png"
             width={673}
             height={694}
@@ -23,6 +77,7 @@ export function SectionHero({ id }: Props) {
             alt=""
           />
           <Image
+            // ref={imageRef}
             src="/assets/images/image-men-worker-mobile.png"
             width={768}
             height={860}
@@ -33,10 +88,16 @@ export function SectionHero({ id }: Props) {
       </div>
       <div className="mx-auto w-full max-w-[600px] pt-12 lg:mx-0">
         <div className="flex w-full flex-col gap-6">
-          <h2 className="text-center text-[40px] font-extrabold leading-text-2xl sm:text-7xl lg:text-left xl:leading-text-4xl">
+          <h2
+            className="text-center text-[40px] font-extrabold leading-text-2xl sm:text-7xl lg:text-left xl:leading-text-4xl"
+            ref={titleRef}
+          >
             Get the Sun to Power Your Home
           </h2>
-          <p className="text-center text-2xl leading-text-xl lg:text-left">
+          <p
+            className="text-center text-2xl leading-text-xl lg:text-left"
+            ref={pRef}
+          >
             Viverra viverra nibh enim et aliquam, enim. Tempor, sit mus viverra
             orci dui consequat turpis scelerisque.
           </p>

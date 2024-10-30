@@ -1,9 +1,38 @@
+import { useGSAP } from '@gsap/react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ArrowRight } from 'iconoir-react'
 import Image from 'next/image'
+import { useRef } from 'react'
 
 import { Link } from '@/components/link'
 
+gsap.registerPlugin(ScrollTrigger)
+
 export function ActionSection() {
+  const imageRef = useRef(null)
+
+  useGSAP(() => {
+    gsap.fromTo(
+      imageRef.current,
+      { opacity: 0 },
+      {
+        opacity: 1,
+        duration: 1,
+        ease: 'power4.out',
+        scrollTrigger: {
+          trigger: imageRef.current,
+          start: 'top 90%',
+          end: 'bottom top',
+          scrub: true,
+        },
+      },
+    )
+    return () => {
+      gsap.killTweensOf(imageRef.current)
+    }
+  }, [])
+
   return (
     <section
       id="services"
@@ -37,6 +66,7 @@ export function ActionSection() {
         </div>
         <div className="relative z-10 mx-auto pb-[1.2rem] pt-[3.75rem]">
           <Image
+            ref={imageRef}
             src="/assets/images/screen-notebook.svg"
             width={1008}
             height={555}
