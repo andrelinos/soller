@@ -1,6 +1,5 @@
 import Image from 'next/image'
 
-import { BackToTopButton } from '../back-to-top-button'
 import { Link } from '../link'
 
 export function Footer() {
@@ -49,7 +48,6 @@ export function Footer() {
           </li>
         </ul>
       </div>
-      <BackToTopButton />
     </div>
   )
 }

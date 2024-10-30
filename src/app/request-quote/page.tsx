@@ -75,7 +75,7 @@ export default function RequestQuote() {
 
   return (
     <div className="flex w-full flex-col gap-6 px-4 pb-20 pt-40 lg:px-20">
-      <h2 className="text-[3.5rem] font-extrabold leading-title">
+      <h2 className="text-center text-[3.5rem] font-extrabold leading-title lg:text-left">
         Richiedi un Preventivo per l&#39;Energia Solare
       </h2>
       <p className="text-left leading-text-base">
@@ -209,7 +209,7 @@ export default function RequestQuote() {
 
         <Button
           type="submit"
-          className="group mx-auto mt-6 flex h-16 min-w-[306px] items-center justify-center gap-6 rounded-full border border-brand-purple-500 bg-transparent px-6 text-2xl font-bold text-brand-purple-500 hover:bg-brand-purple-500 hover:text-brand-yellow-400 xl:mt-0"
+          className="group mx-auto mt-6 flex h-16 w-full max-w-[306px] items-center justify-center gap-6 rounded-full border border-brand-purple-500 bg-transparent px-6 text-xl font-bold text-brand-purple-500 hover:bg-brand-purple-500 hover:text-brand-yellow-400 lg:text-2xl xl:mt-0"
         >
           Invia la Richiesta di Preventivo
         </Button>

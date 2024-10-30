@@ -1,12 +1,12 @@
 <div align="center" id="top">
-  <img src="./.github/print.png" alt="Soller Test 2024 Nextjs" />
+  <img src="./.github/print.png" alt="Soller Test 2024 Next.js" />
 
   &#xa0;
 
   <!-- <a href="https://sollertest2024nextjs.netlify.app">Demo</a> -->
 </div>
 
-<h1 align="center">Soller Test 2024 Nextjs</h1>
+<h1 align="center">Soller Test 2024 Next.js</h1>
 
 <p align="center">
   <img alt="Github top language" src="https://img.shields.io/github/languages/top/andrelinos/soller?color=56BEB8">
@@ -19,7 +19,7 @@
 
 </p>
 
-<hr> -->
+<hr>
 
 <p align="center">
   <a href="#dart-about">About</a> &#xa0; | &#xa0;

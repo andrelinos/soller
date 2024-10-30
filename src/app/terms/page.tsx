@@ -1,7 +1,7 @@
 export default function Terms() {
   return (
-    <div className="flex w-full  flex-col gap-6 px-20 pb-20 pt-40">
-      <h2 className="text-[3.5rem] font-extrabold leading-title">
+    <div className="flex w-full  flex-col gap-6 px-4 pb-20 pt-40 lg:px-20">
+      <h2 className="text-center text-[3.5rem] font-extrabold leading-title lg:text-left">
         Viverra Viverra Nibh Enim Et Aliquam
       </h2>
       <p className="text-left leading-text-base">

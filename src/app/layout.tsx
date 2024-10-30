@@ -3,6 +3,7 @@ import '@/styles/globals.css'
 import type { Metadata } from 'next'
 import { Roboto as FontSans } from 'next/font/google'
 
+import { BackToTopButton } from '@/components/back-to-top-button'
 import { Footer } from '@/components/footer'
 import { Header } from '@/components/header'
 import { cn } from '@/lib/utils'
@@ -33,17 +34,14 @@ export default async function RootLayout({
           fontSans.variable,
         )}
       >
-        <div
-          className="relative flex min-h-screen flex-col justify-between overflow-y-auto overflow-x-hidden bg-background
-     text-brand-text-primary"
-        >
+        <div className="relative flex min-h-screen flex-col justify-between overflow-y-auto overflow-x-hidden bg-background text-brand-text-primary">
           <Header />
 
           {children}
 
           <Footer />
+          <BackToTopButton />
         </div>
-        {/* <ContainerScroll>{children}</ContainerScroll> */}
       </body>
     </html>
   )

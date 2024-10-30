@@ -34,7 +34,7 @@ export default function Support() {
 
   return (
     <div className="flex w-full flex-col gap-6 px-4 pb-20 pt-40 lg:px-20">
-      <h2 className="text-[3.5rem] font-extrabold leading-title">
+      <h2 className="text-center text-[3.5rem] font-extrabold leading-title lg:text-left">
         Assistenza e Supporto Clienti
       </h2>
       <p className="text-left leading-text-base">
@@ -82,16 +82,15 @@ export default function Support() {
         professionale.
       </p>
 
-      {/* Botão para chamada telefônica */}
-      <div className="mt-8 flex gap-4">
+      <div className="mx-auto mt-8 flex gap-4 lg:mx-0">
         <Link
           variant="ghost"
-          href="tel:+390123456789"
+          href="tel:555818282"
           externalLink
           size="social"
-          className="flex h-16 items-center gap-4 rounded-full border px-6 text-brand-blue-500"
+          className="flex h-16 items-center gap-4 rounded-full border px-6 text-lg text-brand-blue-500"
         >
-          Chiama il Supporto (+39 012 345 6789)
+          Chiama il Supporto (555 818 282)
         </Link>
       </div>
 
@@ -101,7 +100,6 @@ export default function Support() {
         ti risponderà entro 24 ore lavorative.
       </p>
 
-      {/* Formulário de Contato */}
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="mt-8 flex flex-col gap-6"
@@ -143,7 +141,7 @@ export default function Support() {
 
         <Button
           type="submit"
-          className="group mx-auto mt-6 flex h-16 min-w-[306px] items-center justify-center gap-6 rounded-full border border-brand-purple-500 bg-transparent px-6 text-2xl font-bold text-brand-purple-500 hover:bg-brand-purple-500 hover:text-brand-yellow-400 xl:mt-0"
+          className="group mx-auto mt-6 flex h-16 w-full max-w-[306px] items-center justify-center gap-6 rounded-full border border-brand-purple-500 bg-transparent px-6 text-xl font-bold text-brand-purple-500 hover:bg-brand-purple-500 hover:text-brand-yellow-400 lg:text-2xl xl:mt-0"
         >
           Invia il Messaggio
         </Button>

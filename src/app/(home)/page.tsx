@@ -16,7 +16,6 @@ export default function Home() {
       <SectionFeatures id="configure" />
       <SliderReviewSection id="reviews" />
       <ActionSection />
-      {/* <BackToTopButton /> */}
     </main>
   )
 }

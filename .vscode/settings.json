@@ -3,7 +3,9 @@
     "embla",
     "gsap",
     "GSAP",
+    "iconoir",
     "soller",
-    "Swiper"
+    "Swiper",
+    "Tweens"
   ]
 }

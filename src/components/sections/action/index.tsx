@@ -70,6 +70,7 @@ export function ActionSection() {
             src="/assets/images/screen-notebook.svg"
             width={1008}
             height={555}
+            layout="responsive"
             priority
             className="h-auto w-[1060px]"
             alt=""

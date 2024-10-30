@@ -18,7 +18,6 @@ export function MenuMobile() {
     null,
   ) as React.MutableRefObject<HTMLDivElement | null>
   const [isOpen, setIsOpen] = useState(false)
-  const [baseUrl, setBaseUrl] = useState<string>('')
 
   const toggleMenu = () => {
     setIsOpen(!isOpen)
@@ -40,12 +39,6 @@ export function MenuMobile() {
       })
     }
   }, [isOpen])
-
-  useEffect(() => {
-    const currentUrl = window.location.href
-    const baseUrl = currentUrl.split('/').slice(0, 3).join('/')
-    setBaseUrl(baseUrl)
-  }, [])
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-background">
@@ -129,18 +122,36 @@ export function MenuMobile() {
                 </Link>
               </div>
               <ul className="mt-4 flex w-full justify-center gap-6 border-t pt-2">
-                {menuData?.map((item, i) => (
-                  <li key={String(i)}>
-                    <Link
-                      className="m-0 p-0 text-base text-brand-text-primary"
-                      variant="link"
-                      href={item.url}
-                      onClick={() => toggleMenu()}
-                    >
-                      Terms
-                    </Link>
-                  </li>
-                ))}
+                <li>
+                  <Link
+                    className="m-0 p-0 text-base text-brand-text-primary"
+                    variant="link"
+                    href="/terms"
+                    onClick={() => toggleMenu()}
+                  >
+                    Terms
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="m-0 p-0 text-base text-brand-text-primary"
+                    variant="link"
+                    href="/privacy"
+                    onClick={() => toggleMenu()}
+                  >
+                    Privacy
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="m-0 p-0 text-base text-brand-text-primary"
+                    variant="link"
+                    href="/support"
+                    onClick={() => toggleMenu()}
+                  >
+                    Support
+                  </Link>
+                </li>
               </ul>
             </nav>
           </section>
