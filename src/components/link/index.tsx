@@ -45,19 +45,35 @@ export interface LinkProps
     VariantProps<typeof linkVariants> {
   asChild?: boolean
   href?: string
+  externalLink?: boolean
 }
 
 const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(
   (
-    { className, variant, size, asChild = false, href = '#', ...props },
+    {
+      className,
+      variant,
+      size,
+      asChild = false,
+      href = '#',
+      externalLink,
+      ...props
+    },
     ref,
   ) => {
+    const [baseUrl, setBaseUrl] = React.useState<string>('')
     const Comp = asChild ? Slot : NextLink
+
+    React.useEffect(() => {
+      const currentUrl = window.location.href
+      const baseUrl = currentUrl.split('/').slice(0, 3).join('/')
+      setBaseUrl(baseUrl)
+    }, [])
     return (
       <Comp
         className={cn(linkVariants({ variant, size, className }))}
         ref={ref}
-        href={href}
+        href={externalLink ? href : `${baseUrl}/${href}`}
         {...props}
       />
     )
