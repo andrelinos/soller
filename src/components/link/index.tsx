@@ -74,6 +74,7 @@ const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(
         className={cn(linkVariants({ variant, size, className }))}
         ref={ref}
         href={externalLink ? href : `${baseUrl}/${href}`}
+        prefetch={true}
         {...props}
       />
     )

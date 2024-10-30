@@ -40,6 +40,7 @@ export function MenuNav() {
         </Link>
         <Link
           variant="outline"
+          href="request-quote"
           className="group mt-6 flex h-16 w-[306px] items-center justify-center gap-6 rounded-full border border-brand-purple-500 bg-transparent px-6 text-2xl font-bold text-brand-purple-500 hover:bg-brand-purple-500 hover:text-brand-yellow-400 xl:mt-0"
         >
           Request a Quote

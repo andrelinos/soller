@@ -23,7 +23,7 @@ export function Footer() {
             <Link
               className="m-0 p-0 text-base text-brand-text-primary"
               variant="link"
-              href="/terms"
+              href="terms"
             >
               Terms
             </Link>
@@ -32,7 +32,7 @@ export function Footer() {
             <Link
               className="m-0 p-0 text-base text-brand-text-primary"
               variant="link"
-              href="/privacy"
+              href="privacy"
             >
               Privacy
             </Link>
@@ -41,7 +41,7 @@ export function Footer() {
             <Link
               className="m-0 p-0 text-base text-brand-text-primary"
               variant="link"
-              href="/support"
+              href="support"
             >
               Support
             </Link>

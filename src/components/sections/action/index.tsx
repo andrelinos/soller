@@ -53,7 +53,7 @@ export function ActionSection() {
           <div className="z-10 mx-auto flex h-full flex-col justify-center gap-4 pt-6 md:pt-16 lg:mx-0 xl:pt-0">
             <Link
               variant="outline"
-              href="#"
+              href="request-quote"
               className="flex h-16 w-[306px] items-center justify-center gap-6 rounded-full border-2 border-brand-yellow-400 bg-transparent px-6 text-2xl font-bold text-brand-yellow-400 hover:bg-brand-yellow-400 hover:text-brand-orange-600"
             >
               Request a Quote

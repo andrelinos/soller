@@ -57,7 +57,7 @@ export function MenuMobile() {
       >
         <div className="relative size-full overflow-hidden">
           <span className="absolute -right-28 -top-28 z-0 size-60 rounded-full bg-brand-blue-400" />
-          <span className="absolute -left-44 bottom-[-17rem] z-0 size-80 rounded-full bg-brand-purple-300" />
+          <span className="absolute -left-44 bottom-[-17rem] z-[-1] size-80 rounded-full bg-brand-purple-300" />
           <Button
             variant="outline"
             className="absolute right-1 top-4 flex size-10 items-center justify-center p-0 text-3xl text-brand-orange-600"
@@ -66,12 +66,12 @@ export function MenuMobile() {
             <X className="text-brand-orange-600" />
             <span className="sr-only">Close</span>
           </Button>
-          <section className="min-h-screen p-6">
+          <section className="h-screen max-h-screen pb-16 pt-6">
             <header className="mb-8">
-              <span className="text-2xl font-bold">soller</span>
+              <span className="p-6 text-2xl font-bold">soller</span>
             </header>
 
-            <nav className="flex size-full flex-col items-center gap-2 px-8 pt-10">
+            <nav className="z-10 flex max-h-full w-full flex-col items-center gap-2 overflow-y-auto overflow-x-hidden py-10">
               <Link
                 key={String()}
                 href="#home"
@@ -125,7 +125,7 @@ export function MenuMobile() {
                   <Link
                     className="m-0 p-0 text-base text-brand-text-primary"
                     variant="link"
-                    href="/terms"
+                    href="terms"
                     onClick={() => toggleMenu()}
                   >
                     Terms
@@ -135,7 +135,7 @@ export function MenuMobile() {
                   <Link
                     className="m-0 p-0 text-base text-brand-text-primary"
                     variant="link"
-                    href="/privacy"
+                    href="privacy"
                     onClick={() => toggleMenu()}
                   >
                     Privacy
@@ -145,7 +145,7 @@ export function MenuMobile() {
                   <Link
                     className="m-0 p-0 text-base text-brand-text-primary"
                     variant="link"
-                    href="/support"
+                    href="support"
                     onClick={() => toggleMenu()}
                   >
                     Support

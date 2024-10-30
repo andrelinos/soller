@@ -31,7 +31,7 @@ export function SliderReviewSection({ id }: Props) {
         <div className="mx-auto mt-6 lg:mx-0">
           <Link
             variant="outline"
-            href="#"
+            href="request-quote"
             className="flex h-16 w-[306px] items-center justify-center gap-6 rounded-full border-2 border-brand-yellow-400 bg-transparent px-6 text-2xl font-bold text-brand-yellow-400 hover:bg-brand-yellow-400 hover:text-brand-orange-600"
           >
             Request a Quote
